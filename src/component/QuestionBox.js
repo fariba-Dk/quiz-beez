@@ -12,11 +12,13 @@ const QuestionBox = ({question, options, selected}) => {
           onClick={() => {
             setAnswer([text]);
             selected(text);
+
           }}
         >
           {text}
         </button>
       ))}
+
     </div>
   );
 };

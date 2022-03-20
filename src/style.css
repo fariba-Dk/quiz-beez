@@ -1,7 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 * {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  background-color: rgb(245, 245, 249);
 }
 
 .container {
@@ -25,43 +27,47 @@
   background-color: rgba(0, 0, 0, 1);
   color: rgb(255, 255, 255);
   padding: 20px;
-  font-size: 1.8em;
+  font-size: 3em;
   border-radius: 5px;
+  text-align: center;
 }
 
 .question {
-  font-size: 1.2em;
+  font-size: 50px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
+  margin: 20px;
 }
 
 .questionBox {
+  
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 10);
   margin-top: 5px;
   padding: 15px;
+  border-radius: 4px;
   box-sizing: border-box;
   background-color: rgb(250, 250, 250);
 }
 
 .answerBtn {
   position: relative;
-  padding: 10px;
-  background-color: rgb(250, 151, 37);
+  padding: 5px;
+  background-color: rgb(37, 196, 37);
   display: inline-block;
-  margin: 10px;
+  margin: 5px;
   outline: none;
   border: none;
-  font-size: 1em;
+  font-size: 1.5em;
   color: rgb(255, 255, 255);
-  font-weight: bold;
+
   border-radius: 4px;
   cursor: pointer;
 }
 
 .score-board {
   position: relative;
-  height: 700px;
+  height: 1200px;
 }
 
 .score {
@@ -85,4 +91,10 @@
   margin: auto;
   outline: none;
   cursor: pointer;
+}
+.footer {
+  padding: 10px 10px 10px 0px;
+  margin: 5px;
+  background-color: white;
+  color: white;
 }

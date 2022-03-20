@@ -1,9 +1,12 @@
-import React from "react";
+import React from 'react';
 
-const Result = ({score, playAgain}) => (
-  <div className="score-board">
-    <div className="score">You scored {score} / 5 correct answers!</div>
-    <button className="playBtn" onClick={playAgain}>
+const Result = ({ score, playAgain,counter }) => (
+  
+
+  <div className='score-board'>
+
+    <div className='score'>You scored {score}/ {counter} </div>
+    <button className='playBtn' onClick={playAgain}>
       Play again!
     </button>
   </div>
