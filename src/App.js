@@ -4,9 +4,10 @@ import './style.css';
 import QuestionBox from './component/QuestionBox';
 import Result from './component/Result';
 // import Counter from './component/Counter'
+import Players from "./component/Players"
 
 /* when we click a button -> we pass our option if it is correct, if correct we increment score by 1*/
-class QuizBeeApp extends Component {
+class App extends Component {
   //declare state in our component
   state = {
     questionBank: [],
@@ -42,6 +43,13 @@ class QuizBeeApp extends Component {
   };
   render() {
     return (
+      <>
+
+
+
+
+        <Players/>
+
       <div className='container'>
         <div className='title'>🐝 Quiz-Bee 🐝</div>
         {this.state.questionBank.length > 0 &&
@@ -78,8 +86,9 @@ class QuizBeeApp extends Component {
           </footer>
         </div>
       </div>
+      </>
     );
   }
 }
-export default QuizBeeApp;
+export default App;
 //<Result score={this.state.score} playAgain={this.playAgain} />

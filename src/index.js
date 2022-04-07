@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
-import QuizBeeApp from './QuizBeeApp';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
- 
-    <QuizBeeApp />
+
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
