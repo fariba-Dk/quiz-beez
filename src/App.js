@@ -44,10 +44,6 @@ class App extends Component {
   render() {
     return (
       <>
-
-
-
-
         <Players/>
 
       <div className='container'>

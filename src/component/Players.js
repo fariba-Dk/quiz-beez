@@ -1,63 +1,74 @@
 import React, {useState, useEffect} from 'react';
+let cc = console.log
+//name player input
+//if player is stored => it shows their lst sscore
+//if not then enter name
+//if there are 2 of the same name askes the player to rename
 
-
-
+//top player's name and their score
+//having list players in select / drop down with name of player their score
 const Players = () => {
+  //{score, setScore}
 
   const [players, setPlayers] = useState([])
+
   const [currentPlayerName, setCurrentPlayerName] = useState('')
+
   const[score, setScore] = useState(0)
-
-
+  //load
 
   useEffect(() => {
-    const existingPlayers = JSON.parse(localStorage.getItem('players'))
-    //we are fetching
-    if(existingPlayers){
-      console.log('this is line 40 ', existingPlayers)
+    let existingPlayers = JSON.parse(localStorage.getItem('players'))
+
+    if (existingPlayers) {
+      if (typeof existingPlayers === 'string') {
+         // TODO: figure out why our first JSON.parse isn't working
+         existingPlayers = JSON.parse(existingPlayers);
+      }
       setPlayers(existingPlayers)
+
+   }
     }
-  },[])
+  ,[])
 
   const onSubmit =(e)=>{
 
     e.preventDefault()
     //to check if the player exists
-    const playerIndex = players.find((player)=> player.name === currentPlayerName)
-    //in react we can not update the state directly if the input is obj
-    //so we need make a copy of the obj
-    const newPlayers = [...players]
+    const allPlayers = [...players]//all player array
+
+    const playerIndex = allPlayers.findIndex((player)=> player.name === currentPlayerName)
 
     if(playerIndex === -1){
-      newPlayers.push({name:currentPlayerName, score:score})
+
+      allPlayers.push({name:currentPlayerName, score:score})
 
     }else{
-      newPlayers[playerIndex].score = score
-      console.log(score)
+
+      allPlayers[playerIndex].score = score
     }
     //make sure obj are immutable => we make a copy
-    setPlayers(newPlayers)
+    setPlayers(allPlayers) //update the new players
 
   }
   //things to do: score
   //make the function to keep score
+
   return(
 
     <div>
-      <h1>Welcome </h1>
-        <form onSubmit={(e) =>onSubmit(e)}>
+      <h1>Welcome 🐝 {currentPlayerName} </h1>
+        <form onSubmit={(e) => onSubmit(e)}>
           <label>
             <input
               type="text"
-
               placeholder="Enter name"
               onChange={(e)=>setCurrentPlayerName(e.target.value)}
             />
               <button
               type="submit"
               className="answerBtn"
-
-              >Enter Name
+              >Save
               </button>
           </label>
         </form>
@@ -69,12 +80,3 @@ const Players = () => {
 }
 export default Players;
 
- /*player={
-    name: '',
-  }
-  array of [...player]
-  if player exist =>
-  have total scores so far and they can see other plays score
-  otherwise => they enter their name
-  user gets welcome message and a par on how to play the game
-  */
